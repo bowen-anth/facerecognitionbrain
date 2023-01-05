@@ -88,10 +88,11 @@ class App extends Component {
         .then(count => {
           this.setState(Object.assign(this.state.user, { entries: count }))
           })
-          .catch(console.log(error));
+          .catch(console.log);
       }
       this.displayFaceBox(this.calculateFaceLocation(response)) 
     })
+    .catch(err => console.log(err));
   }
 
 onRouteChange = (route) => {
